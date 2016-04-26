@@ -9,16 +9,19 @@ namespace Refactoring_Martin_Fowler
     class Customer
     {
         private String name;
-        
+        private int frequentRenterPoints;
+
 
         private List<Rental> rentals = new List<Rental>();
+        private Statement statements;
 
         public Customer(String newname)
         {
             name = newname;
+            statements = new Statement();
 
-            this.addRental(new Rental(1));
-            this.addRental(new Rental(2));
+            this.addRental(new Rental(1,3));
+            this.addRental(new Rental(2,4));
 
         }
 
@@ -42,10 +45,19 @@ namespace Refactoring_Martin_Fowler
 
         private double amountFor(Rental rental)
         {
-            double thisAmount = 0;
-            thisAmount = getAmount(rental, thisAmount);
-            return thisAmount;
+            return rental.getAmount(rental);
+            
         }
+
+        
+
+        public  int getFrequentRenterPoints()
+        {
+            this.frequentRenterPoints = statements.calcFrequentRenterPoints( rentals );
+            return frequentRenterPoints;
+        }
+
+
 
         
     }

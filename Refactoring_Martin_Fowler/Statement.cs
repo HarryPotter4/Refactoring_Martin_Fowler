@@ -19,7 +19,7 @@ namespace Refactoring_Martin_Fowler
         public String statement(Customer customer, List<Rental> rentals)
         {
             double totalPrice = 0;
-            int frequentRenterPoints = 0;
+            
                         
 
             string result = printContent();
@@ -37,8 +37,7 @@ namespace Refactoring_Martin_Fowler
                 frequentRenterPoints++;
 
                 // add bonus for a two day new release rental
-                if ((rental.getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
-                    frequentRenterPoints++;
+                
                 
                 //show figures for this rental
                 result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + thisAmount.ToString() + "\n";
@@ -49,6 +48,18 @@ namespace Refactoring_Martin_Fowler
             result += "Amount owed is " + totalPrice.ToString() + "\n";
             result += "You earned " + frequentRenterPoints.ToString() + " frequent renter points";
             return result;
+        }
+        public int calcFrequentRenterPoint(List<Rental> rentals)
+        {
+            int tempRenterPoint = 0;
+
+            foreach (Rental item in rentals)
+            {
+                tempRenterPoint++;
+            
+                if ((item.getPriceCode() == Constants.NEW_RELEASE) && item.getDaysRented() > 1)
+                    tempRenterPoint++;
+            }
         }
 
     }

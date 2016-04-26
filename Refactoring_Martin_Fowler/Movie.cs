@@ -7,24 +7,14 @@ using System.Threading.Tasks;
 namespace Refactoring_Martin_Fowler
 {
     class Movie
-    {
+    {     
+        private String title;   
         
-
-        private String title;
-        private int priceCode;
-        private Rental rental;
-
-        public Movie(String newtitle, int newpriceCode, int newdaysRented)
+        public Movie(String newtitle)
         {
-            title = newtitle;
-            priceCode = newpriceCode;
-
-            rental = new Rental(newdaysRented);
+            title = newtitle;                               
         }
-        public int getPriceCode()
-        {
-            return priceCode;
-        }
+       
         public void setPriceCode(int arg)
         {
             priceCode = arg;
@@ -33,9 +23,7 @@ namespace Refactoring_Martin_Fowler
         {
             return title;
         }
-
-
-
+        
         public Movie getMovie()
         {
             return this;
