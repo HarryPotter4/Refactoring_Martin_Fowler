@@ -38,12 +38,7 @@ namespace Refactoring_Martin_Fowler
         }
         
 
-        private string printContent()
-        {
-            String result = "Rental Record for " + this.getName() + "\n";
-            result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
-            return result;
-        }
+        
 
         private double amountFor(Rental rental)
         {
