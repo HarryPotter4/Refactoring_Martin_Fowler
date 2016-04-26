@@ -12,11 +12,14 @@ namespace Refactoring_Martin_Fowler
 
         private String title;
         private int priceCode;
+        private Rental rental;
 
-        public Movie(String newtitle, int newpriceCode)
+        public Movie(String newtitle, int newpriceCode, int newDaysRented)
         {
             title = newtitle;
             priceCode = newpriceCode;
+
+            rental = new Rental(newdaysRented);
         }
         public int getPriceCode()
         {
@@ -35,7 +38,7 @@ namespace Refactoring_Martin_Fowler
 
         public Movie getMovie()
         {
-            return movie;
+            return this;
         }
     }
 }
