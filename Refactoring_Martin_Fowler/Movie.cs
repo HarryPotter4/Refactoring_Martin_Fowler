@@ -30,5 +30,12 @@ namespace Refactoring_Martin_Fowler
         {
             return title;
         }
+
+
+
+        public Movie getMovie()
+        {
+            return movie;
+        }
     }
 }

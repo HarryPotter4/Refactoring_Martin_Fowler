@@ -20,9 +20,6 @@ namespace Refactoring_Martin_Fowler
         {
             return daysRented;
         }
-        public Movie getMovie()
-        {
-            return movie;
-        }
+        
     }
 }

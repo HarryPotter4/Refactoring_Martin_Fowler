@@ -29,7 +29,7 @@ namespace Refactoring_Martin_Fowler
             customer.ElementAt(1).addRental(rental.ElementAt(2));
 
             Console.WriteLine("Let's get the Statement");
-            result = c1.statement();
+            result = customer.ElementAt(1).statement();
             Console.Write(result);
 
             Console.ReadLine();
