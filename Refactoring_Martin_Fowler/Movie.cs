@@ -14,7 +14,7 @@ namespace Refactoring_Martin_Fowler
         private int priceCode;
         private Rental rental;
 
-        public Movie(String newtitle, int newpriceCode, int newDaysRented)
+        public Movie(String newtitle, int newpriceCode, int newdaysRented)
         {
             title = newtitle;
             priceCode = newpriceCode;

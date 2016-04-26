@@ -14,15 +14,11 @@ namespace Refactoring_Martin_Fowler
             Console.WriteLine("Welcome to the Movie Store");
 
             List<Movie> movie = new List<Movie>();
-            List<Rental> rental = new List<Rental>();
             List<Customer> customer = new List<Customer>();
 
-            movie.Add(new Movie("movie1", 1));
-            movie.Add(new Movie("movie2", 2));
-
-            rental.Add(new Rental(movie.ElementAt(1), 10));
-            rental.Add(new Rental(movie.ElementAt(2), 5));
-
+            movie.Add(new Movie("movie1", 1,10));
+            movie.Add(new Movie("movie2", 2,5));
+            
             customer.Add(new Customer("joe"));
             
             customer.ElementAt(1).addRental(rental.ElementAt(1));
