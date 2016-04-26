@@ -33,10 +33,9 @@ namespace Refactoring_Martin_Fowler
             double totalAmount = 0;
             int frequentRenterPoints = 0;
 
-            IEnumerable<Rental> enum_rental = rentals;                 
-                                
-            String result = "Rental Record for " + this.getName() + "\n";
-            result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
+            IEnumerable<Rental> enum_rental = rentals;
+
+            string result = printContent();
             int index = 0;
 
             while (index < enum_rental.Count())
@@ -59,6 +58,13 @@ namespace Refactoring_Martin_Fowler
             //add footer lines
             result += "Amount owed is " + totalAmount.ToString() + "\n";
             result += "You earned " + frequentRenterPoints.ToString() + " frequent renter points";
+            return result;
+        }
+
+        private string printContent()
+        {
+            String result = "Rental Record for " + this.getName() + "\n";
+            result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
             return result;
         }
 
