@@ -21,8 +21,6 @@ namespace Refactoring_Martin_Fowler
             
             customer.Add(new Customer("joe"));
             
-            customer.ElementAt(1).addRental(rental.ElementAt(1));
-            customer.ElementAt(1).addRental(rental.ElementAt(2));
 
             Console.WriteLine("Let's get the Statement");
             result = customer.ElementAt(1).statement();

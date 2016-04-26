@@ -15,6 +15,11 @@ namespace Refactoring_Martin_Fowler
         public Customer(String newname)
         {
             name = newname;
+
+            this.addRental(new Rental(1));
+            this.addRental(new Rental(2));
+
+
         }
 
         public void addRental(Rental arg)
@@ -77,17 +82,19 @@ namespace Refactoring_Martin_Fowler
 
         private static double getAmount(Rental rental, double thisAmount)
         {
-            switch (rental.getMovie().getPriceCode())
+
+
+            switch (movie.getPriceCode())
             {
-                case Movie.REGULAR:
+                case Constants.REGULAR:
                     thisAmount += 2;
                     if (rental.getDaysRented() > 2)
                         thisAmount += (rental.getDaysRented() - 2) * 1.5;
                     break;
-                case Movie.NEW_RELEASE:
+                case Constants.NEW_RELEASE:
                     thisAmount += rental.getDaysRented() * 3;
                     break;
-                case Movie.CHILDRENS:
+                case Constants.CHILDRENS:
                     thisAmount += 1.5;
                     if (rental.getDaysRented() > 3)
                         thisAmount += (rental.getDaysRented() - 3) * 1.5;

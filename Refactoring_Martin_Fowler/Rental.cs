@@ -12,8 +12,7 @@ namespace Refactoring_Martin_Fowler
         private int daysRented;
 
         public Rental( int newdaysRented)
-        {
-            
+        {            
             daysRented = newdaysRented;
         }
         public int getDaysRented()
