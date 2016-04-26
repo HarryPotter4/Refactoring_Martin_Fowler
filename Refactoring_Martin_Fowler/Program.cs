@@ -10,6 +10,7 @@ namespace Refactoring_Martin_Fowler
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
