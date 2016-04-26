@@ -9,6 +9,7 @@ namespace Refactoring_Martin_Fowler
     class Customer
     {
         private String name;
+        
 
         private List<Rental> rentals = new List<Rental>();
 
@@ -19,12 +20,16 @@ namespace Refactoring_Martin_Fowler
             this.addRental(new Rental(1));
             this.addRental(new Rental(2));
 
-
         }
 
         public void addRental(Rental arg)
         {            
             rentals.Add(arg);
+        }
+
+        public Customer getRentals()
+        {
+            return this;
         }
 
         public String getName()
