@@ -15,6 +15,7 @@ namespace Refactoring_Martin_Fowler
 
             List<Movie> movie = new List<Movie>();
             List<Rental> rental = new List<Rental>();
+            List<Customer> customer = new List<Customer>();
 
             movie.Add(new Movie("movie1", 1));
             movie.Add(new Movie("movie2", 2));
@@ -23,7 +24,8 @@ namespace Refactoring_Martin_Fowler
             rental.Add(new Rental(movie.ElementAt(2), 5));
            
             Customer c1 = new Customer("joe");
-            c1.addRental(rental.ElementAt(1)); c1.addRental(rental.ElementAt(2));
+            c1.addRental(rental.ElementAt(1));
+            c1.addRental(rental.ElementAt(2));
 
             Console.WriteLine("Let's get the Statement");
             result = c1.statement();
