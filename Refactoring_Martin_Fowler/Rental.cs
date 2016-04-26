@@ -8,7 +8,7 @@ namespace Refactoring_Martin_Fowler
 {
     class Rental
     {
-        
+        private int frequentRenterPoints;
         private int daysRented;
 
         public Rental( int newdaysRented)
@@ -19,7 +19,7 @@ namespace Refactoring_Martin_Fowler
         {
             return daysRented;
         }
-        private static double getAmount(Rental rental, double thisAmount)
+        public double getAmount(Rental rental, double thisAmount)
         {
             switch (movie.getPriceCode())
             {

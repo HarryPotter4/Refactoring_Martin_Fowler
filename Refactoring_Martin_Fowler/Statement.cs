@@ -28,14 +28,14 @@ namespace Refactoring_Martin_Fowler
             {
 
                 double localPrice = 0;
-               
-                
+
+
                 //determine amounts for rental line
-                thisAmount = amountFor(rental);
-                
+                localPrice = item.getAmount(item, localPrice);
+
                 // add frequent renter points
                 frequentRenterPoints++;
-                
+
                 // add bonus for a two day new release rental
                 if ((rental.getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
                     frequentRenterPoints++;
