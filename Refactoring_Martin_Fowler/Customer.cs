@@ -36,40 +36,7 @@ namespace Refactoring_Martin_Fowler
         {
             return name;
         }
-
-
-        public String statement()
-        {
-            double totalAmount = 0;
-            int frequentRenterPoints = 0;
-
-            IEnumerable<Rental> enum_rental = rentals;
-
-            string result = printContent();
-            int index = 0;
-
-            while (index < enum_rental.Count())
-            {
-                double thisAmount = 0;
-                Rental rental = (Rental)enum_rental.ElementAt(index);
-                //determine amounts for rental line
-                thisAmount = amountFor(rental);
-                // add frequent renter points
-                frequentRenterPoints++;
-                // add bonus for a two day new release rental
-                if ((rental.getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
-                    frequentRenterPoints++;
-                //show figures for this rental
-                result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + thisAmount.ToString() + "\n";
-                totalAmount += thisAmount;
-
-                index++;
-            }
-            //add footer lines
-            result += "Amount owed is " + totalAmount.ToString() + "\n";
-            result += "You earned " + frequentRenterPoints.ToString() + " frequent renter points";
-            return result;
-        }
+        
 
         private string printContent()
         {
