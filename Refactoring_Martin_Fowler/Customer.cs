@@ -8,17 +8,19 @@ namespace Refactoring_Martin_Fowler
 {
     class Customer
     {
-        private String name;
-        private int frequentRenterPoints;
-
-
+        private String name;        
+        private Output outputLine;
+        
         private List<Rental> rentals = new List<Rental>();
         private Statement statements;
 
         public Customer(String newname)
         {
             name = newname;
-            statements = new Statement();
+
+            outputLine = new Output();
+            statements = new Statement(outputLine);
+            
 
             this.addRental(new Rental(1,3));
             this.addRental(new Rental(2,4));
@@ -53,7 +55,8 @@ namespace Refactoring_Martin_Fowler
 
         public  int getFrequentRenterPoints()
         {
-            this.frequentRenterPoints = statements.calcFrequentRenterPoints( rentals );
+            frequentRenterPoints = statements.calcFrequentRenterPoints(rentals);
+            outputLine.setFrequentRenterPoints(frequentRenterPoints);
             return frequentRenterPoints;
         }
 

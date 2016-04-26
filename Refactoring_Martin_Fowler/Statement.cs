@@ -8,58 +8,52 @@ namespace Refactoring_Martin_Fowler
 {
     class Statement
     {
-        
+        private Output outputLine;
 
 
-        public Statement()
+        public Statement(Output output)
         {
-                
+            outputLine = output;
         }
 
         public String statement(Customer customer, List<Rental> rentals)
         {
             double totalPrice = 0;
-            
-                        
+            outputLine.printContent();
 
-            string result = printContent();
-        
             foreach (Rental item in rentals)
             {
-
                 double localPrice = 0;
 
-
                 //determine amounts for rental line
-                localPrice = item.getAmount(item, localPrice);
+                localPrice = item.getAmount(item);
 
-                // add frequent renter points
-                frequentRenterPoints++;
-
-                // add bonus for a two day new release rental
-                
-                
                 //show figures for this rental
-                result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + thisAmount.ToString() + "\n";
-                totalPrice += thisAmount;
+                outputLine.setListOutput(item, totalPrice);
+                totalPrice += localPrice;
 
             }
             //add footer lines
-            result += "Amount owed is " + totalPrice.ToString() + "\n";
-            result += "You earned " + frequentRenterPoints.ToString() + " frequent renter points";
-            return result;
+            outputLine.setTotalPrice(totalPrice);
+            
         }
-        public int calcFrequentRenterPoint(List<Rental> rentals)
+
+        
+
+
+        public int calcFrequentRenterPoints(List<Rental> rentals)
         {
             int tempRenterPoint = 0;
 
             foreach (Rental item in rentals)
             {
                 tempRenterPoint++;
-            
+
+                // add bonus for a two day new release rental
                 if ((item.getPriceCode() == Constants.NEW_RELEASE) && item.getDaysRented() > 1)
                     tempRenterPoint++;
             }
+            return tempRenterPoint;
         }
 
     }
