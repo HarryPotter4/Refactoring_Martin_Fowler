@@ -71,6 +71,12 @@ namespace Refactoring_Martin_Fowler
         private double amountFor(Rental rental)
         {
             double thisAmount = 0;
+            thisAmount = getAmount(rental, thisAmount);
+            return thisAmount;
+        }
+
+        private static double getAmount(Rental rental, double thisAmount)
+        {
             switch (rental.getMovie().getPriceCode())
             {
                 case Movie.REGULAR:
@@ -87,8 +93,8 @@ namespace Refactoring_Martin_Fowler
                         thisAmount += (rental.getDaysRented() - 3) * 1.5;
                     break;
             }
+
             return thisAmount;
         }
-
     }
 }
