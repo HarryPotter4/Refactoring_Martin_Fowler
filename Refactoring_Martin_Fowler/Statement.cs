@@ -16,7 +16,7 @@ namespace Refactoring_Martin_Fowler
                 
         }
 
-        public String statement(Customer customer, Rental rentals)
+        public String statement(Customer customer, List<Rental> rentals)
         {
             double totalPrice = 0;
             int frequentRenterPoints = 0;
@@ -24,9 +24,11 @@ namespace Refactoring_Martin_Fowler
 
             string result = printContent();
         
-            foreach ( Rental item in rentals) { 
-                double thisAmount = 0;
-                Rental rental = (Rental)enum_rental.ElementAt(index);
+            foreach (Rental item in rentals)
+            {
+
+                double localPrice = 0;
+               
                 
                 //determine amounts for rental line
                 thisAmount = amountFor(rental);

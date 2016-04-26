@@ -47,28 +47,6 @@ namespace Refactoring_Martin_Fowler
             return thisAmount;
         }
 
-        private static double getAmount(Rental rental, double thisAmount)
-        {
-
-
-            switch (movie.getPriceCode())
-            {
-                case Constants.REGULAR:
-                    thisAmount += 2;
-                    if (rental.getDaysRented() > 2)
-                        thisAmount += (rental.getDaysRented() - 2) * 1.5;
-                    break;
-                case Constants.NEW_RELEASE:
-                    thisAmount += rental.getDaysRented() * 3;
-                    break;
-                case Constants.CHILDRENS:
-                    thisAmount += 1.5;
-                    if (rental.getDaysRented() > 3)
-                        thisAmount += (rental.getDaysRented() - 3) * 1.5;
-                    break;
-            }
-
-            return thisAmount;
-        }
+        
     }
 }
