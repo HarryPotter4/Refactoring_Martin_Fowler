@@ -9,7 +9,9 @@ namespace Refactoring_Martin_Fowler
     class Customer
     {
         private String name;
+
         private List<Rental> rentals = new List<Rental>();
+
         public Customer(String newname)
         {
             name = newname;
@@ -24,6 +26,8 @@ namespace Refactoring_Martin_Fowler
         {
             return name;
         }
+
+
         public String statement()
         {
             double totalAmount = 0;

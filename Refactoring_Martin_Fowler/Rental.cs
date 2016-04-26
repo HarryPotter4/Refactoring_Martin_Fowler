@@ -10,6 +10,7 @@ namespace Refactoring_Martin_Fowler
     {
         private Movie movie;
         private int daysRented;
+
         public Rental(Movie newmovie, int newdaysRented)
         {
             movie = newmovie;
