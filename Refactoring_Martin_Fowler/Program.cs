@@ -22,8 +22,9 @@ namespace Refactoring_Martin_Fowler
 
             rental.Add(new Rental(movie.ElementAt(1), 10));
             rental.Add(new Rental(movie.ElementAt(2), 5));
-           
-            Customer c1 = new Customer("joe");
+
+            customer.Add(new Customer("joe"));
+            
             c1.addRental(rental.ElementAt(1));
             c1.addRental(rental.ElementAt(2));
 
