@@ -23,7 +23,7 @@ namespace Refactoring_Martin_Fowler
             rental.Add(new Rental(movie.ElementAt(2), 5));
            
             Customer c1 = new Customer("joe");
-            c1.addRental(r1); c1.addRental(r2);
+            c1.addRental(rental.ElementAt(1)); c1.addRental(rental.ElementAt(2));
 
             Console.WriteLine("Let's get the Statement");
             result = c1.statement();
