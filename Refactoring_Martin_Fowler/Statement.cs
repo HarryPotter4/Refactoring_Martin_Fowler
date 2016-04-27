@@ -8,38 +8,45 @@ namespace Refactoring_Martin_Fowler
 {
     class Statement
     {
+        private Customer customer;
         private Output outputLine;
 
-
-        public Statement(Output output)
+        public Statement(Customer customer)
         {
-            outputLine = output;
+            this.customer = customer;
+            outputLine = new Output();
+
+            statement(customer);
         }
 
-        public String statement(Customer customer, List<Rental> rentals)
+        public void statement(Customer customer)
         {
             double totalPrice = 0;
-            outputLine.printContent();
+            outputLine.printContent(customer.getName());
+            List<Rental> rentals = customer.getRentals();
 
             foreach (Rental item in rentals)
             {
                 double localPrice = 0;
-
-                //determine amounts for rental line
+                                
                 localPrice = item.getAmount(item);
 
                 //show figures for this rental
-                outputLine.setListOutput(item, totalPrice);
+                outputLine.setListOutput(item.getMovieTitle(),item.getDaysRented(), totalPrice);
                 totalPrice += localPrice;
 
             }
             //add footer lines
-            outputLine.setTotalPrice(totalPrice);
-            
+            outputLine.setTotalPrice(totalPrice);            
         }
 
-        
 
+        public int getFrequentRenterPoints()
+        {
+            int frequentRenterPoints = calcFrequentRenterPoints(customer.getRentals());
+            outputLine.setFrequentRenterPoints(frequentRenterPoints);
+            return frequentRenterPoints;
+        }
 
         public int calcFrequentRenterPoints(List<Rental> rentals)
         {
@@ -55,6 +62,5 @@ namespace Refactoring_Martin_Fowler
             }
             return tempRenterPoint;
         }
-
     }
 }

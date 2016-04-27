@@ -8,25 +8,29 @@ namespace Refactoring_Martin_Fowler
 {
     class Movie
     {     
-        private String title;   
+        private string title;
+        private int priceCode;
         
-        public Movie(String newtitle)
+      
+        public Movie(string newtitle, int priceCode)
         {
-            title = newtitle;                               
+            this.priceCode = priceCode;
+            this.title = newtitle;
         }
-       
-        public void setPriceCode(int arg)
+        //public void setPriceCode(int arg)
+        //{
+        //    priceCode = arg;
+        //}
+
+        public int getPriceCode()
         {
-            priceCode = arg;
+            return this.priceCode;
         }
-        public String getTitle()
+        public string getTitle()
         {
             return title;
         }
         
-        public Movie getMovie()
-        {
-            return this;
-        }
+        
     }
 }

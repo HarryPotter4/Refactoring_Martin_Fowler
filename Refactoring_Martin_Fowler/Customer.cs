@@ -12,19 +12,15 @@ namespace Refactoring_Martin_Fowler
         private Output outputLine;
         
         private List<Rental> rentals = new List<Rental>();
-        private Statement statements;
+        
 
         public Customer(String newname)
         {
             name = newname;
-
             outputLine = new Output();
-            statements = new Statement(outputLine);
-            
 
-            this.addRental(new Rental(1,3));
-            this.addRental(new Rental(2,4));
-
+            this.addRental(new Rental(1,3, "movie1"));
+            this.addRental(new Rental(2,4, "movie2"));
         }
 
         public void addRental(Rental arg)
@@ -32,36 +28,20 @@ namespace Refactoring_Martin_Fowler
             rentals.Add(arg);
         }
 
-        public Customer getRentals()
+        public List<Rental> getRentals()
         {
-            return this;
+            return rentals;
         }
 
         public String getName()
         {
             return name;
         }
-        
-
-        
 
         private double amountFor(Rental rental)
         {
             return rental.getAmount(rental);
             
         }
-
-        
-
-        public  int getFrequentRenterPoints()
-        {
-            frequentRenterPoints = statements.calcFrequentRenterPoints(rentals);
-            outputLine.setFrequentRenterPoints(frequentRenterPoints);
-            return frequentRenterPoints;
-        }
-
-
-
-        
     }
 }

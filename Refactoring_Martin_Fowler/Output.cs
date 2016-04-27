@@ -8,39 +8,35 @@ namespace Refactoring_Martin_Fowler
 {
     class Output
     {
-        private string result;
-        public string Result
+        public void welcomePrint()
         {
-            get
-            {
-                return result;
-            }
-
-            set
-            {
-                result = value;
-            }
+            Console.WriteLine("Welcome to the Movie Store");
         }
 
-        public string printContent()
+        public void printContent(string name)
         {
-            Result = "Rental Record for " + this.getName() + "\n";
-            Result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
-           
+            string result = "Rental Record for " + name + "\n";
+            result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
+
+            Console.WriteLine(result);           
         }
 
-        public void setListOutput(Rental rental, double totalPrice)
+        public void setListOutput(string movieTitel, int rentedDays, double totalPrice)
         {
-            Result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + totalPrice.ToString() + "\n";            
+            string result = "\t" + movieTitel + "\t" + "\t" + rentedDays + "\t" + totalPrice.ToString() + "\n";
+            Console.WriteLine(result);          
         }
 
         public void setTotalPrice(double totalPrice)
         {
-            Result += "Amount owed is " + totalPrice.ToString() + "\n"; 
+            string result = "Amount owed is " + totalPrice.ToString() + "\n";
+            Console.Write(result);
         }
+
         public  void setFrequentRenterPoints(int frequentRenterPoints)
         {
-            Result += "You earned " + frequentRenterPoints.ToString() + " frequent renter points";
+            string result = "You earned " + frequentRenterPoints.ToString() + " frequent renter points";
+            Console.WriteLine(result);
         }
 
 

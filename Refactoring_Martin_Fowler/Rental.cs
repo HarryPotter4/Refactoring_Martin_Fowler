@@ -10,13 +10,28 @@ namespace Refactoring_Martin_Fowler
     {
         
         private int daysRented;
-        private int newpriceCode;
+        private int newpriceCode;        
+        private Movie movie;
+        
 
-        public Rental( int newdaysRented,int priceCode)
+        public Rental( int newdaysRented,int priceCode, string movieName)
         {            
             daysRented = newdaysRented;
             newpriceCode = priceCode;
+            movie = new Movie(movieName, priceCode);
+
         }
+        public int getMoviePriceCode()
+        {
+            return movie.getPriceCode();
+        }
+        public string getMovieTitle()
+        {
+            return movie.getTitle();
+        }
+
+
+
         public int getDaysRented()
         {
             return daysRented;
