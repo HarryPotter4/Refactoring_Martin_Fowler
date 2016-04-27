@@ -16,7 +16,13 @@ namespace Refactoring_Martin_Fowler
             this.customer = customer;
             outputLine = new Output();
 
+            outputLine.welcomePrint();
+            outputLine.startStatment();
             statement(customer);
+
+            int frequentRenterPoints = calcFrequentRenterPoints(customer.getRentals());
+            outputLine.setFrequentRenterPoints(frequentRenterPoints);
+
         }
 
         public void statement(Customer customer)
@@ -32,7 +38,7 @@ namespace Refactoring_Martin_Fowler
                 localPrice = item.getAmount(item);
 
                 //show figures for this rental
-                outputLine.setListOutput(item.getMovieTitle(),item.getDaysRented(), totalPrice);
+                outputLine.setListOutput(item.getMovieTitle(),item.getDaysRented(), localPrice);
                 totalPrice += localPrice;
 
             }

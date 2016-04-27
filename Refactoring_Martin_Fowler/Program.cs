@@ -14,7 +14,7 @@ namespace Refactoring_Martin_Fowler
             customer.Add(new Customer("joe"));
             
 
-            Console.WriteLine("Let's get the Statement");
+            
             Statement statement =  new Statement(customer.ElementAt(0));
 
 

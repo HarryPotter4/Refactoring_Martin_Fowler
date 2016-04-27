@@ -19,8 +19,8 @@ namespace Refactoring_Martin_Fowler
             name = newname;
             outputLine = new Output();
 
-            this.addRental(new Rental(1,3, "movie1"));
-            this.addRental(new Rental(2,4, "movie2"));
+            this.addRental(new Rental(10, 1,"movie1"));
+            this.addRental(new Rental(5 , 2,"movie2"));
         }
 
         public void addRental(Rental arg)

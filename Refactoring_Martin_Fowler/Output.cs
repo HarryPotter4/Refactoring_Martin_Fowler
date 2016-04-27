@@ -16,14 +16,19 @@ namespace Refactoring_Martin_Fowler
         public void printContent(string name)
         {
             string result = "Rental Record for " + name + "\n";
-            result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
+            result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount";
 
             Console.WriteLine(result);           
         }
 
+        internal void startStatment()
+        {
+            Console.Write("Let's get the statement \n");
+        }
+
         public void setListOutput(string movieTitel, int rentedDays, double totalPrice)
         {
-            string result = "\t" + movieTitel + "\t" + "\t" + rentedDays + "\t" + totalPrice.ToString() + "\n";
+            string result = "\t" + movieTitel + "\t" + "\t" + rentedDays + "\t" + totalPrice.ToString();
             Console.WriteLine(result);          
         }
 

@@ -14,7 +14,7 @@ namespace Refactoring_Martin_Fowler
         private Movie movie;
         
 
-        public Rental( int newdaysRented,int priceCode, string movieName)
+        public Rental( int newdaysRented,int priceCode,  string movieName)
         {            
             daysRented = newdaysRented;
             newpriceCode = priceCode;
